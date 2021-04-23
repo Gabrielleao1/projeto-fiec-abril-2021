@@ -1,0 +1,51 @@
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+function validar() {
+    let campos = [];
+    let nome = document.getElementById('nome').value;
+    let cpf = document.getElementById('cpf').value;
+    let data = document.getElementById('data').value;
+    let sexo = document.getElementById('sexo').value;
+    let email = document.getElementById('email').value;
+    let celular = document.getElementById('celular').value;
+    let media = document.getElementById('media').value;
+    let nivel = document.getElementById('nivel').value;
+
+    const dataForm = [
+        { label: "Nome", valor: nome },
+        { label: "CPF", valor: cpf },
+        { label: "Nascimento", valor: data },
+        { label: "Sexo", valor: sexo },
+        { label: "E-mail", valor: email },
+        { label: "Celular", valor: celular },
+        { label: "Média", valor: media },
+        { label: "Nível", valor: nivel }
+    ];
+
+    for (let i = 0; i < dataForm.length; i++) {
+        if (dataForm[i].valor == "") {
+            campos.push(dataForm[i].label);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `Por favor preencha o(s) campo(s) abaixo: ${campos.join(', ')}`,
+            });
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Aluno cadastrado com sucesso!',
+                showConfirmButton: false,
+                timer: 2500
+            });
+        }
+    }
+}
