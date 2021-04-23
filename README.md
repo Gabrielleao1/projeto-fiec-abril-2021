@@ -9,3 +9,6 @@ Projeto da VILT com parceria da FIEC para capacitar os participantes com as tecn
 
 ## Atualizações 
 O projeto ainda está em andamento então irei atualizando os gifs de demonstração de funcionamento 
+
+## Site 
+Para acessar: https://gabrielleao1.github.io/projeto-fiec-abril-2021/
